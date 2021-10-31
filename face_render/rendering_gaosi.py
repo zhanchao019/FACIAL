@@ -12,6 +12,7 @@ from face3d import mesh
 from load_data import BFM 
 from scipy.io import loadmat,savemat
 import pandas as pd
+from tqdm import  tqdm
 
 parser = argparse.ArgumentParser(description='Render_setting')
 parser.add_argument('--train_params_path', type=str, default='../audio2face/data/train3.npz')
@@ -182,8 +183,9 @@ save_folder = opt.outpath + examplename
 if not os.path.exists(save_folder):
 	os.makedirs(save_folder)
 
-for i in range(1,netparams.shape[0]+1):
-	print(i)
+
+for i in tqdm(range(1,netparams.shape[0]+1)):
+	#print(i)
 	chi_next = netparams[i-1,:].copy() 
 	if i>3 and i<netparams.shape[0]-2:
 		for j in range(6):

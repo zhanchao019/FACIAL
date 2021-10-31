@@ -15,7 +15,7 @@ import os
 import glob
 from os.path import join, exists, abspath, dirname
 import ffmpeg
-
+from tqdm import tqdm
 
 opt = TestOptions().parse(save=False)
 opt.nThreads = 1   # test code only supports nThreads = 1
@@ -37,8 +37,7 @@ img_root = '../examples/test_image/'+opt.test_id_name
 if not os.path.exists(img_root):
     os.makedirs(img_root)
 
-for i, data in enumerate(dataset):
-    print(i)
+for i, data in enumerate(tqdm(dataset)):
     label = data['label']
     cur_frame = model.inference(label)
     prev_frame = cur_frame.data[0]
