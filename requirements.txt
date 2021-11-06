@@ -1,6 +1,6 @@
 torch==1.9.0
 torchvision
-tensorflow-gpu == 1.14.0
+tensorflow == 1.14.0
 tqdm
 pandas
 numpy
@@ -12,3 +12,5 @@ dominate
 torchfile
 ffmpeg
 python_speech_features
+jupyter
+librosa

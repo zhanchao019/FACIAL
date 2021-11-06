@@ -65,5 +65,3 @@ for audio_path in audio_list:
                 faceparams[j:j+128,:] = _faceparam[0,:,:].cpu().numpy()
 
         np.savez(frames_out_path, face = faceparams)
-
-
