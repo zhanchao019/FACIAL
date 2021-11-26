@@ -115,9 +115,10 @@ class AudioHandler:
         with tf.Session(graph=graph) as sess:
             for subj in tqdm(audio.keys()):
                 for seq in audio[subj].keys():
-                    # print 'process %s - %s' % (subj, seq)
+                    print('process %s - %s' % (subj, seq))
 
                     audio_sample = audio[subj][seq]['audio']
+                    print(audio_sample.shape)
                     sample_rate = audio[subj][seq]['sample_rate']
                     resampled_audio = resampy.resample(audio_sample.astype(float), sample_rate, 16000)
                     input_vector = audioToInputVector(resampled_audio.astype('int16'), 16000, n_input, n_context)

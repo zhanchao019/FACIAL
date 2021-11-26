@@ -51,6 +51,7 @@ for subject in subjects:
     audio_list = glob.glob(os.path.join(dataset_path, subject + '/*.wav'))      # subject file location
     tmp_audio = {}
     for audio_fname in audio_list:
+        print(audio_fname)
         sentence = audio_fname.split('/')[-1][0:-4]                             # get wav name
 
         sample_rate, audio = wavfile.read(audio_fname)                          # read wav file
