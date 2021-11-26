@@ -12,6 +12,9 @@ face2vid/models/spynet_models/
 # gen files
 test/*/obj/
 test/*/libs/
+#dataset traindata
+face2vid/datasets/train3/test_A/*
+face2vid/datasets/train3/test_B/*
 
 # data
 smplx/data1/
